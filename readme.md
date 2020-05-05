@@ -38,3 +38,26 @@ Preliminary discussion of the presentations with the instructor (voluntary): 1-2
   - live-data variations (mutablelivedata, mediatorlivedata, ...)
   - combining different live-data
   
+## idea:
+create an app which shows a list of t-shirts. 
+t-shirt:
+- color
+- id
+- size
+the app can show all t shirts (1 Page)  
+shows some icons in a color with a t-shirt displayed on it.
+
+the app can show one t shirt and its information (2 Page)  
+show big t shirt icon
+show t shirt size (read size in xml to show no need to unpack LiveData objects)  
+show t shirt color (use color variable in t-shirt) 
+switch to next or previous t-shirt (by select index)
+maybe hide previous or next button if index is at 0 or list.length-1
+
+shared ViewModel:
+- list of t-shirts (array/list/livedata<list>)
+- selected index of list (MutableLiveData<Int>)
+- selected t-shirt (observation of selectedIndex, which takes tshirt in list at index)
+- color of selected t-shirt (Transformation of selected t-shirt)
+  
+
