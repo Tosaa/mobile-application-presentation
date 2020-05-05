@@ -59,4 +59,6 @@ shared ViewModel:
 - selected t-shirt (observation of selectedIndex, which takes tshirt in list at index)
 - color of selected t-shirt (Transformation of selected t-shirt)
   
-
+  
+=> build in logs, which show who edited MLD, observed LD (and what happend)
+=> maybe make a branch without livedata and show complex onClick() Functions
