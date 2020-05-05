@@ -1,6 +1,7 @@
 # Presentation Mobile Development
 ## requirement
-Every student has to do a presentation on a mobile-related topic. The presentations are done in pairs. The list of presentations with dates is below.
+Every student has to do a presentation on a mobile-related topic.  
+The presentations are done in pairs. The list of presentations with dates is below.
 
 Your presentation:
 
@@ -60,5 +61,5 @@ shared ViewModel:
 - color of selected t-shirt (Transformation of selected t-shirt)
   
   
-=> build in logs, which show who edited MLD, observed LD (and what happend)
-=> maybe make a branch without livedata and show complex onClick() Functions
+=> build in logs, which show who edited MLD, observed LD (and what happend)  
+=> maybe make a branch without livedata and show complex onClick() Functions  
