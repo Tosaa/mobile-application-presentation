@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 
-class DetailFragment : Fragment() {
+class DetailFragment : LoggedFragment() {
     private lateinit var model : TShirtSelectorViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         val modelTMP = activity?.let { ViewModelProvider(it).get(TShirtSelectorViewModel::class.java) }
+        val modelTMP = activity?.let { ViewModelProvider(it).get(TShirtSelectorViewModel::class.java) }
         if (modelTMP != null){
             model = modelTMP
         }

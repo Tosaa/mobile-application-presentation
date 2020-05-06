@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_overview.view.*
 
-class OverviewFragment : Fragment() {
+class OverviewFragment : LoggedFragment() {
     private lateinit var model: TShirtSelectorViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
