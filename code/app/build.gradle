@@ -39,4 +39,6 @@ dependencies {
     // lifecycle for viewmodel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
+    // recyclerview for overview fragment
+    implementation "androidx.recyclerview:recyclerview:1.2.0-alpha03"
 }

@@ -5,9 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListAdapter
-import android.widget.SimpleAdapter
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_overview.view.*
 
 class OverviewFragment : Fragment() {
@@ -26,9 +25,15 @@ class OverviewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_overview, container, false)
-        // change view of fragment
-        // and/or pass model to view
+        // set view.list adapter
+        view.list.apply {
+            adapter = TShirtAdapter(model.allTShirts)
+            layoutManager = GridLayoutManager(inflater.context, 5)
+        }
+        // set view.list on item clicked
+
         return view
     }
-
 }
+
+

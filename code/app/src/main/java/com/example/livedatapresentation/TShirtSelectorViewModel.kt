@@ -8,5 +8,5 @@ class TShirtSelectorViewModel(application: Application) : AndroidViewModel(appli
     // List of T-shirts
     // index of the selected T-shirt
     // the color of the selected T-shirt
-    val allTShirts = listOf<TShirt>(TShirt("#aaa","L"),TShirt("#0a0","XL"))
+    val allTShirts = listOf<TShirt>(TShirt("#aaaaaa", "L"), TShirt("#00aa00", "XL"))
 }
