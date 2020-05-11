@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/button_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="DetailFragment"
+        android:textAlignment="center" />
+
+    <fragment
+        android:id="@+id/detailed_view"
+        android:name="com.example.livedatapresentation.DetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_fragments"
+        android:layout_weight="0.5" />
+
+    <Button
+        android:id="@+id/button_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Overview Fragment"
+        android:textAlignment="center" />
+
+    <fragment
+        android:id="@+id/overview_view"
+        android:name="com.example.livedatapresentation.OverviewFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_fragments"
+        android:layout_weight="0.5" />
+
+    <Button
+        android:id="@+id/button_add_random"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Add Random T-Shirt"
+        android:textAlignment="center" />
+</LinearLayout>
