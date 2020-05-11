@@ -11,7 +11,7 @@ import timber.log.Timber
 
 open class LoggedFragment() : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        Timber.d("onCreate : ${this::class.java.simpleName}")
+        Timber.d("onCreate : $this")
         super.onCreate(savedInstanceState)
     }
 
@@ -20,42 +20,42 @@ open class LoggedFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Timber.d("onCreateView : ${this::class.java.simpleName}")
+        //Timber.d("onCreateView : $this")
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onAttach(context: Context) {
-        Timber.d("onAttach : ${this::class.java.simpleName}")
+        //Timber.d("onAttach : $this")
         super.onAttach(context)
     }
 
     override fun onPause() {
-        Timber.d("onPause : ${this::class.java.simpleName}")
+        //Timber.d("onPause : $this")
         super.onPause()
     }
 
     override fun onStart() {
-        Timber.d("onStart: ${this::class.java.simpleName}")
+        Timber.d("onStart: $this")
         super.onStart()
     }
 
     override fun onResume() {
-        Timber.d("onResume : ${this::class.java.simpleName}")
+        //Timber.d("onResume : $this")
         super.onResume()
     }
 
     override fun onDestroyView() {
-        Timber.d("onDestroyView : ${this::class.java.simpleName}")
+        //Timber.d("onDestroyView : $this")
         super.onDestroyView()
     }
 
     override fun onStop() {
-        Timber.d("onStop : ${this::class.java.simpleName}")
+        Timber.d("onStop : $this")
         super.onStop()
     }
 
     override fun onDestroy() {
-        Timber.d("onDestroy : ${this::class.java.simpleName}")
+        //Timber.d("onDestroy : $this")
         super.onDestroy()
     }
 
