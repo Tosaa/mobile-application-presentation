@@ -22,6 +22,7 @@ Preliminary discussion of the presentations with the instructor (voluntary): 1-2
 ## Plan:
 
 #### what to show ?
+##### original:
 - what is live-data (2 min) :x: no time
 - compare live-data with observable pattern (3 min) :x: no time
 - how to import live-data (3 min) :heavy_exclamation_mark: show shortly
@@ -37,7 +38,17 @@ Preliminary discussion of the presentations with the instructor (voluntary): 1-2
   - make sure live-data is observed -> else : live-data.value will be empty/default 
   - live-data variations (mutablelivedata, mediatorlivedata, ...)  :heavy_check_mark: will be shown in live demo
   - combining different live-data
-  
+##### new:
+- lifecycles (short explained)
+- lifedycle awareness
+- livedata & livedata observer
+- livedata usecases
+  - [architecture image](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
+  - dependency injection
+    - repository
+  - mvvm architecture
+    - view (fragment / Activty) -- ViewModel
+- livedata Transfomations
 ## idea:
 create an app which shows a list of t-shirts. 
 t-shirt:
