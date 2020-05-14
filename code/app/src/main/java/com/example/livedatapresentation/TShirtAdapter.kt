@@ -7,10 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_detail.view.*
 import kotlinx.android.synthetic.main.tshirt_button.view.*
+import timber.log.Timber
 import java.lang.Exception
 
-class TShirtAdapter(private val tshirts: List<TShirt>) :
+class TShirtAdapter(
+    private val tshirts: List<TShirt>,
+    private val listener: OnItemClickInRecyclerView
+) :
     RecyclerView.Adapter<TShirtAdapter.TShirtViewHolder>() {
 
     class TShirtViewHolder(tshirtView: View) : RecyclerView.ViewHolder(tshirtView)
@@ -26,6 +31,10 @@ class TShirtAdapter(private val tshirts: List<TShirt>) :
     }
 
     override fun onBindViewHolder(holder: TShirtViewHolder, position: Int) {
+        holder.itemView.tshirt_button.setOnClickListener {
+            listener.onClicked(position)
+        }
+
         try {
             val colorByTshirt = tshirts.get(position).color
             val colorAsInt = android.graphics.Color.parseColor(colorByTshirt)
@@ -38,4 +47,9 @@ class TShirtAdapter(private val tshirts: List<TShirt>) :
             Log.w("TShirtAdapter", "could not assign Color of T-Shirt to button image")
         }
     }
+}
+
+// Recycler view does not provide OnItemClick, so i created a little workaround
+interface OnItemClickInRecyclerView {
+    fun onClicked(position: Int)
 }

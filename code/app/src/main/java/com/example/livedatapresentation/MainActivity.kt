@@ -1,12 +1,9 @@
 package com.example.livedatapresentation
 
-import android.opengl.Visibility
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
@@ -25,6 +22,12 @@ class MainActivity : AppCompatActivity() {
                 TShirtSelectorViewModel::class.java
             )
         setContentView(R.layout.activity_main)
+        Timber.d("MainActivity observes Model selected index")
+        val observerIndex = Observer<Int>(){Timber.d("observed index: $it")}
+        val observerTshirt = Observer<TShirt>(){Timber.d("observed Shirt: $it")}
+        model.selectedIndex.observe(this,observerIndex)
+        model.selectedTShirt.observe(this,observerTshirt)
+
     }
 
 
