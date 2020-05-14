@@ -39,8 +39,6 @@ Preliminary discussion of the presentations with the instructor (voluntary): 1-2
   - live-data variations (mutablelivedata, mediatorlivedata, ...)  :heavy_check_mark: will be shown in live demo
   - combining different live-data
 ##### new:
-- lifecycles (short explained)
-- lifedycle awareness
 - livedata & livedata observer
 - livedata usecases
   - [architecture image](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
@@ -49,6 +47,18 @@ Preliminary discussion of the presentations with the instructor (voluntary): 1-2
   - mvvm architecture
     - view (fragment / Activty) -- ViewModel
 - livedata Transfomations
+
+extra: 
+- lifecycles (short explained)
+- lifecycle awareness
+
+> your presentation should include the following components:  
+> * Motivation and introduction to the topic
+> * Technical background
+> * Implementation/application on a mobile platform
+> * Short demonstration (live programming or similar)
+> * Summary
+
 ## idea:
 create an app which shows a list of t-shirts. 
 t-shirt:
