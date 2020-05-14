@@ -1,17 +1,17 @@
-package com.example.livedatapresentation
+package com.example.livedatapresentation.tshirt.screens.selection
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_overview.view.*
-import timber.log.Timber
+import com.example.livedatapresentation.*
+import com.example.livedatapresentation.common.LoggedFragment
+import com.example.livedatapresentation.tshirt.screens.TShirtSelectorViewModel
+import kotlinx.android.synthetic.main.fragment_tshirt_list.view.*
 
-class OverviewFragment : LoggedFragment() {
+class TShirtListFragment : LoggedFragment() {
     private lateinit var model: TShirtSelectorViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +27,10 @@ class OverviewFragment : LoggedFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_overview, container, false)
+        val view = inflater.inflate(R.layout.fragment_tshirt_list, container, false)
         // set view.list adapter
-        val onClickListener = object : OnItemClickInRecyclerView {
+        val onClickListener = object :
+            OnItemClickInRecyclerView {
             override fun onClicked(position: Int) {
                 model.selectedIndex.postValue(position)
             }
@@ -37,7 +38,11 @@ class OverviewFragment : LoggedFragment() {
         }
 
         view.list.apply {
-            adapter = TShirtAdapter(model.allTShirts, onClickListener)
+            adapter =
+                TShirtAdapter(
+                    model.allTShirts,
+                    onClickListener
+                )
             layoutManager = GridLayoutManager(inflater.context, 5)
         }
         // set view.list on item clicked

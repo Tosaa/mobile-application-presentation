@@ -7,7 +7,7 @@
     android:background="@color/fragment_background"
     android:orientation="vertical"
     android:padding="@dimen/margin_fragments"
-    tools:context=".DetailFragment">
+    tools:context=".tshirt.screens.detail.DetailFragment">
 
     <ImageView
         android:id="@+id/t_shirt_image"

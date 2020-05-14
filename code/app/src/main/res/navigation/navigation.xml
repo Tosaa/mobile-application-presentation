@@ -6,9 +6,9 @@
     app:startDestination="@id/allInOne">
     <fragment
         android:id="@+id/allInOne"
-        android:name="com.example.livedatapresentation.AllInOne"
+        android:name="com.example.livedatapresentation.tshirt.screens.overview.DetailWithSelectionFragment"
         android:label="AllInOne"
-        tools:layout="@layout/fragment_all_in_one"
+        tools:layout="@layout/fragment_tshirt_overview"
         >>
         <action
             android:id="@+id/action_allInOne_to_detailFragment3"
@@ -23,12 +23,12 @@
     </fragment>
     <fragment
         android:id="@+id/DetailFragment"
-        android:name="com.example.livedatapresentation.DetailFragment"
+        android:name="com.example.livedatapresentation.tshirt.screens.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
     <fragment
         android:id="@+id/OverviewFragment"
-        android:name="com.example.livedatapresentation.OverviewFragment"
+        android:name="com.example.livedatapresentation.tshirt.screens.selection.TShirtListFragment"
         android:label="fragment_overview"
-        tools:layout="@layout/fragment_overview" />
+        tools:layout="@layout/fragment_tshirt_list" />
 </navigation>

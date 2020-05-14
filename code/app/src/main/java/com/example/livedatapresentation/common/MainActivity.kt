@@ -1,9 +1,12 @@
-package com.example.livedatapresentation
+package com.example.livedatapresentation.common
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.livedatapresentation.R
+import com.example.livedatapresentation.tshirt.TShirt
+import com.example.livedatapresentation.tshirt.screens.TShirtSelectorViewModel
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 

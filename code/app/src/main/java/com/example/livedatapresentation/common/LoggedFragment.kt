@@ -1,4 +1,4 @@
-package com.example.livedatapresentation
+package com.example.livedatapresentation.common
 
 import android.app.Activity
 import android.content.Context

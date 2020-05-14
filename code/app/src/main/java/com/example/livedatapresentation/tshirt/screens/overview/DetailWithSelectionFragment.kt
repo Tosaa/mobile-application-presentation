@@ -1,20 +1,21 @@
-package com.example.livedatapresentation
+package com.example.livedatapresentation.tshirt.screens.overview
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.fragment_all_in_one.view.*
+import com.example.livedatapresentation.common.LoggedFragment
+import com.example.livedatapresentation.R
+import kotlinx.android.synthetic.main.fragment_tshirt_overview.view.*
 import timber.log.Timber
 
-class AllInOne : LoggedFragment() {
+class DetailWithSelectionFragment : LoggedFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =  inflater.inflate(R.layout.fragment_all_in_one, container, false)
+        val view =  inflater.inflate(R.layout.fragment_tshirt_overview, container, false)
         // change view of fragment
         // and/or pass model to view
         view.button_detail.setOnClickListener {

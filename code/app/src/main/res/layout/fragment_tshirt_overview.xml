@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/detailed_view"
-        android:name="com.example.livedatapresentation.DetailFragment"
+        android:name="com.example.livedatapresentation.tshirt.screens.detail.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_fragments"
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/overview_view"
-        android:name="com.example.livedatapresentation.OverviewFragment"
+        android:name="com.example.livedatapresentation.tshirt.screens.selection.TShirtListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_fragments"

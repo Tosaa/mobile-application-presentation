@@ -1,6 +1,4 @@
-package com.example.livedatapresentation
-
-import android.graphics.Color
+package com.example.livedatapresentation.tshirt
 
 class TShirt(
     val color: String,

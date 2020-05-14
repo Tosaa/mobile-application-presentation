@@ -1,4 +1,4 @@
-package com.example.livedatapresentation
+package com.example.livedatapresentation.tshirt.screens.selection
 
 import android.content.res.ColorStateList
 import android.os.Build
@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_detail.view.*
+import com.example.livedatapresentation.R
+import com.example.livedatapresentation.tshirt.TShirt
 import kotlinx.android.synthetic.main.tshirt_button.view.*
-import timber.log.Timber
 import java.lang.Exception
 
 class TShirtAdapter(
@@ -23,7 +23,9 @@ class TShirtAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TShirtViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.tshirt_button, parent, false)
-        return TShirtViewHolder(view)
+        return TShirtViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int {

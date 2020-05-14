@@ -1,19 +1,19 @@
-package com.example.livedatapresentation
+package com.example.livedatapresentation.tshirt.screens.detail
 
 import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.livedatapresentation.common.LoggedFragment
+import com.example.livedatapresentation.R
+import com.example.livedatapresentation.tshirt.screens.TShirtSelectorViewModel
 import kotlinx.android.synthetic.main.fragment_detail.view.*
-import kotlinx.android.synthetic.main.tshirt_button.view.*
-import timber.log.Timber
 import java.lang.Exception
 
 class DetailFragment : LoggedFragment() {
