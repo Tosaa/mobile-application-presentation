@@ -40,7 +40,7 @@ class TShirtListFragment : LoggedFragment() {
         view.list.apply {
             adapter =
                 TShirtAdapter(
-                    model.allTShirts,
+                    model.allTShirts.value.orEmpty(),
                     onClickListener
                 )
             layoutManager = GridLayoutManager(inflater.context, 5)
