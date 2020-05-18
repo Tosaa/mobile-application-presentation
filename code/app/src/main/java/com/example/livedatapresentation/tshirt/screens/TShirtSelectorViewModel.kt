@@ -11,26 +11,17 @@ class TShirtSelectorViewModel(application: Application) : AndroidViewModel(appli
         Timber.d("onCreate : ${this::class.java}")
     }
 
-    // List of T-shirts
-    // index of the selected T-shirt
-    // the color of the selected T-shirt
-    val repo = TshirtRepository
+    val repo = TshirtRepository.instance
     val allTShirts = repo.allTshirts
     val selectedIndex = MutableLiveData<Int>().also { it.value = 0 }
-    val selectedTShirt = Transformations.map(selectedIndex, {
-        // Using allTshirts.value in if and in return value, will show you a notification,
-        // that the reference to the object could have changed in the time between if and return
-        val allTshirtsValue =allTShirts.value
-        // the allTshirts.value could be Null.
-        // The compiler does not know if you have set any value by default,
-        // but to be sure, you allways should check about Null
+    val selectedTShirt = Transformations.map(selectedIndex) {
+        val allTshirtsValue = allTShirts.value
         if (allTshirtsValue.isNullOrEmpty()) {
-            // export any Default value
-            TShirt("#000","L")
+            TShirt("#000", "L")
         } else {
             allTshirtsValue.get(it)
         }
-    })
+    }
 
     override fun onCleared() {
         Timber.d("onCleared : ${this::class.java}")

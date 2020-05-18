@@ -6,7 +6,7 @@
     app:startDestination="@id/allInOne">
     <fragment
         android:id="@+id/allInOne"
-        android:name="com.example.livedatapresentation.tshirt.screens.overview.DetailWithSelectionFragment"
+        android:name="com.example.livedatapresentation.tshirt.screens.overview.DetailWithTShirtListFragment"
         android:label="AllInOne"
         tools:layout="@layout/fragment_tshirt_overview"
         >>

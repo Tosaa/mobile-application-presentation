@@ -1,32 +1,104 @@
 \documentclass{beamer}
+\usepackage{graphicx} % includegraphics command is implemented here
+
 \author{Anton Saatze}
 \title{Android LiveData}
-\institute{Hochschule fuer Angewandte Wissenschaften Muenchen}
+\institute{University of applied Sciences Munich}
 \date{22.may.2020}
 \subject{Android}
 \begin{document}
 	\maketitle
+	
 	\begin{frame}
 		\frametitle{Table of Contents}
 		\tableofcontents
 	\end{frame}
+	
 	\section[Motivation]{Motivation}
 	\begin{frame}
 		\frametitle{Motivation}
+		\begin{itemize}
+		\item core concept to present data
+		\item clean way to hand data across the archictecture
+		\item guarantee that latest data is presented in view
+		\item first thing to learn, when joining a real android project team
+		\end{itemize}
 	\end{frame}
+	
 	\section[Technical Background]{Technical Background}
 	\begin{frame}
 		\frametitle{Technical Background}
-	\end{frame}
-	\section[App Structure]{General App Structure}
+		\begin{itemize}
+		\item first thing to learn, when joining a real android project team
+		\item 1/2 year internship in a android project
+		\item learned android basics (Activty, Fragment, Lifecycle, Viewmodel, Views, LifeData, Databinding)
+		\item my first task have been "redesign view xyz regarding to the designers wishes"
+		\end{itemize}
+		\end{frame}
 		\begin{frame}
-		\frametitle{Overall Structure of Android Apps}
+		\frametitle{Technical Background}
+		\begin{itemize}
+		\item learn how to design views with different layouts
+		\item how to bind data to the view
+		\item how adapter and lists work
+		\item how to apply Data to a viewmodel
+		\item how to publish Data by a viewmodel
+		\item (Spoiler) its no magic, its LiveData
+		\end{itemize}
 	\end{frame}
+	
+	\section[Live Data]{LiveData}
+	\begin{frame}
+		\frametitle{LiveData}
+\begin{quote}LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state\end{quote} developer.android.com \linebreak(official documentaion of android)
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{LiveData}
+		\begin{quote}\textbf{LiveData} is an \textbf{observable data holder} class. Unlike a regular observable, \textbf{LiveData is lifecycle-aware}, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures \textbf{LiveData only updates} app component observers that are in an \textbf{active lifecycle} state\end{quote} developer.android.com \linebreak(official documentaion of android)
+	\end{frame}
+	
+	\begin{frame}
+	\frametitle{LiveData (example)}
+
+	\end{frame}
+	
+	\begin{frame}
+	\frametitle{LiveData (Observer Pattern)}
+	%https://en.wikipedia.org/wiki/File:W3sDesign_Observer_Design_Pattern_UML.jpg
+	\includegraphics[width=1\textwidth]{observerpattern.png}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{LiveData (LifeCycle Awarenes)}
+	\begin{itemize}
+	\item Observer almost everytime need an LifeCycle
+	\item only exception when using "observeForever" method
+	\item LifeCycles are provided by the Activity and/or Fragments 
+	\item Observer only observe while the passed LifeCycle is (STARTED/RESUMED)
+	\item Observer do not observe when the LifeCycle is PAUSED or in a dead state
+	\end{itemize}
+	Fazit: make sure, to have an lifecycle when you want to observe
+	\end{frame}	
+	
+	\section[App Structure]{General App Structure}
+	\begin{frame}
+		\frametitle{Overall Structure of Android Apps}
+		\includegraphics[width=1\textwidth]{architecture.png}
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Overall Structure of Android Apps}
+		\includegraphics[width=1\textwidth]{architecture_observes.png}
+	\end{frame}
+	
 	\section[My App]{Simple T-Shirt App}
 	\begin{frame}
 		\frametitle{T-Shirt App}
 		what can this app do?
 	\end{frame}
+	
 	\section[Summary]{Summary}
 	\begin{frame}
 		\frametitle{Summary}

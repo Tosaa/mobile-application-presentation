@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.example.livedatapresentation.common.LoggedFragment
 import com.example.livedatapresentation.R
+import com.example.livedatapresentation.tshirt.TShirt
+import com.example.livedatapresentation.tshirt.repository.TshirtRepository
 import kotlinx.android.synthetic.main.fragment_tshirt_overview.view.*
 import timber.log.Timber
 
-class DetailWithSelectionFragment : LoggedFragment() {
+class DetailWithTShirtListFragment : LoggedFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +27,10 @@ class DetailWithSelectionFragment : LoggedFragment() {
         view.button_overview.setOnClickListener {
             Timber.d("click : OverviewButton\n")
             view.findNavController().navigate(R.id.action_allInOne_to_overviewFragment2)
+        }
+        view.button_add_random.setOnClickListener {
+            Timber.d("click : Add Random")
+            TshirtRepository.instance.addTshirt(TShirt.createRandom())
         }
         return view
     }

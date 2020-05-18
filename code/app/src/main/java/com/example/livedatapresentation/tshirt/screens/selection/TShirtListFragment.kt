@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.livedatapresentation.*
 import com.example.livedatapresentation.common.LoggedFragment
+import com.example.livedatapresentation.tshirt.repository.TshirtRepository
 import com.example.livedatapresentation.tshirt.screens.TShirtSelectorViewModel
 import kotlinx.android.synthetic.main.fragment_tshirt_list.view.*
 
@@ -20,7 +22,6 @@ class TShirtListFragment : LoggedFragment() {
         if (modelTMP != null) {
             model = modelTMP
         }
-
     }
 
     override fun onCreateView(
@@ -34,20 +35,17 @@ class TShirtListFragment : LoggedFragment() {
             override fun onClicked(position: Int) {
                 model.selectedIndex.postValue(position)
             }
-
         }
 
-        view.list.apply {
-            adapter =
-                TShirtAdapter(
+        model.allTShirts.observe(this, Observer {
+            view.list.apply {
+                adapter = TShirtAdapter(
                     model.allTShirts.value.orEmpty(),
                     onClickListener
                 )
-            layoutManager = GridLayoutManager(inflater.context, 5)
-        }
-        // set view.list on item clicked
+                layoutManager = GridLayoutManager(inflater.context, 5)
+            }
+        })
         return view
     }
 }
-
-
