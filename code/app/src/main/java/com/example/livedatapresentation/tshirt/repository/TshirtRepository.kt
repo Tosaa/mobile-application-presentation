@@ -11,7 +11,6 @@ class TshirtRepository private constructor(){
         TShirt("#aaaaaa", "L"),
         TShirt("#00aa00", "XL")
     )
-
     // MutableLiveData has setter and getter
     private val _allTshirts = MutableLiveData<List<TShirt>>().apply {
         value = initialList

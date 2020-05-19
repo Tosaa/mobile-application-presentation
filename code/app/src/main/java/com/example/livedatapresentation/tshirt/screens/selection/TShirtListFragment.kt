@@ -36,7 +36,6 @@ class TShirtListFragment : LoggedFragment() {
                 model.selectedIndex.postValue(position)
             }
         }
-
         model.allTShirts.observe(this, Observer {
             view.list.apply {
                 adapter = TShirtAdapter(
