@@ -1,5 +1,6 @@
 \documentclass{beamer}
 \usepackage{graphicx} % includegraphics command is implemented here
+\usetheme{Hannover}
 
 
 \author{Anton Saatze}
@@ -56,17 +57,23 @@
 	
 	\begin{frame}
 		\frametitle{LiveData}
+		\begin{quote}\textbf{LiveData} is an \textbf{observable data holder} class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state\end{quote} developer.android.com \linebreak(official documentaion of android)
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{LiveData}
 		\begin{quote}\textbf{LiveData} is an \textbf{observable data holder} class. Unlike a regular observable, \textbf{LiveData is lifecycle-aware}, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures \textbf{LiveData only updates} app component observers that are in an \textbf{active lifecycle} state\end{quote} developer.android.com \linebreak(official documentaion of android)
 	\end{frame}
 	
 	\begin{frame}
-	\frametitle{LiveData (Observer Pattern)}
+	\frametitle{Observer Pattern}
 	%https://en.wikipedia.org/wiki/File:W3sDesign_Observer_Design_Pattern_UML.jpg
 	\includegraphics[width=1\textwidth]{observerpattern.png}
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{LiveData (LifeCycle Awarenes)}
+	\frametitle{LifeCycle Awarenes}
 	\begin{itemize}
 	\item Observer almost everytime need an LifeCycle
 	\item only exception when using "observeForever" method
@@ -79,7 +86,7 @@
 	
 	
 	\begin{frame}[fragile]
-	\frametitle{LiveData (example)}
+	\frametitle{Code example}
 		\begin{block}{Create MutableLiveData}
 		\begin{semiverbatim}
 			val liveData = MutableLiveData<String>().apply\{
@@ -97,7 +104,7 @@
 	\end{frame}
 	
 	\begin{frame}[fragile]
-	\frametitle{LiveData (example)}
+	\frametitle{Code example}
 		\begin{block}{Create LiveData using MutableLiveData}
 		\begin{semiverbatim}
 			private val privateLiveData = MutableLiveData<String>()\linebreak.apply\{
@@ -113,7 +120,7 @@
 	\end{frame}
 	
 	\begin{frame}[fragile]
-	\frametitle{LiveData (example)}
+	\frametitle{Code example}
 		\begin{block}{Observing LiveData with Observer object}
 			\begin{semiverbatim}
 			val nameObserver = Observer<String> \{ newName ->
@@ -134,6 +141,26 @@
 	\end{block}
 	\end{frame}
 	
+	\begin{frame}
+	\frametitle{Observing Livedata + Databinding }
+	\textbf{Fragment}
+	\includegraphics[width=1\textwidth]{DataBindingInFragment.png}
+	\textbf{XML}
+	\includegraphics[width=1\textwidth]{DataBindingInXML.png}
+	\end{frame}
+	
+	\begin{frame}	
+	\frametitle{Observing Livedata + Databinding}
+	\textbf{XML}
+	\includegraphics[width=1\textwidth]{DataBindingInImageView.png}
+	\end{frame}
+	
+	\begin{frame}	
+	\frametitle{Observing Livedata + Databinding}
+	\textbf{XML}
+	\includegraphics[width=1\textwidth]{DataBindingInTextView.png}
+	\end{frame}
+	
 	\section[App Structure]{General App Structure}
 	\begin{frame}
 		\frametitle{Overall Structure of Android Apps}
@@ -150,22 +177,52 @@
 		\frametitle{T-Shirt App Fragments}
 		Show the APP now
 	\end{frame}
+	
 	\begin{frame}
 		\frametitle{T-Shirt App}
 		\includegraphics[width=1\textwidth]{TshirtArchitectureOverview.png}
 	\end{frame}
+	
 	\begin{frame}
 		\frametitle{T-Shirt App}
 		\includegraphics[width=1\textwidth]{TShirtAppDetailView.png}
 	\end{frame}
+	
 	\section[Summary]{Summary}
 	\begin{frame}
 		\frametitle{Summary}
 		\begin{itemize}
-		\item hints
-		\item tricks
-		\item sources
-		\item blog posts
+		\item check LifeCycle
+		
+		no observation when LifeCycle is Paused
+		\item pass lifecycle to binding
+		\item check if LiveData is observed
+		
+		not observed LiveData does not change
+		\item check value is in proper Type in xml
+		
+		android:text = "@\{viewmodel.number\}"
+		
+			$\neq$
+		
+		android:text = "@\{viewmodel.number.toString()\}" 
+		\item check Livedata is not Mutable acidently
+		
 		\end{itemize}
 	\end{frame}
+	
+	\begin{frame}
+		\frametitle{more information}
+		\begin{itemize}
+			\item udemy.com/course/android-jetpack/
+			\item medium.com/androiddevelopers/viewmodels-and-livedata-patterns-antipatterns-21efaef74a54
+		\end{itemize}
+		developer.android.com:
+		\begin{itemize}
+			\item /topic/libraries/architecture/livedata
+			\item /reference/androidx/lifecycle/Transformations
+			\item /jetpack/docs/guide
+		\end{itemize}
+	\end{frame}
+	
 \end{document}
