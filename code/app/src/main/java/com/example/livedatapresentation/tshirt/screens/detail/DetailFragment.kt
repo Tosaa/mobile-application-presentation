@@ -32,9 +32,6 @@ class DetailFragment : LoggedFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_detail, container, false)
-        // this is a example how the Fragment observes the View Model to change the value in the xml file
-        // not the best approach !
-        // refactor this in liveCoding
         model.selectedTShirt.observe(
             activity!!,
             Observer {
@@ -45,7 +42,7 @@ class DetailFragment : LoggedFragment() {
         return view
     }
 
-    // this shows how complicated it can be, to set a value of an xml file programaticly
+    // this shows how complicated it can be, to set a value of an xml file programmatically
     private fun changeTShirtColor(tshirtView: ImageView, tshirtNewColor: String) {
         try {
             val colorAsInt = android.graphics.Color.parseColor(tshirtNewColor)

@@ -1,112 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="model"
             type="com.example.livedatapresentation.tshirt.screens.TShirtSelectorViewModel" />
     </data>
 
-<LinearLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/fragment_background"
-    android:orientation="vertical"
-    android:padding="@dimen/margin_fragments"
-    android:divider="?android:dividerHorizontal"
-    tools:context=".tshirt.screens.detail.DetailFragment">
-
-    <ImageView
-        android:id="@+id/t_shirt_image"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/t_shirt"
-        android:tint="#0a0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:background="@color/fragment_background"
+        android:divider="?android:dividerHorizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_fragments"
+        tools:context=".tshirt.screens.detail.DetailFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
+        <ImageView
+            android:id="@+id/t_shirt_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="color:"></TextView>
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/t_shirt"
+            android:tint="@{model.tshirtColor}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/color_value"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="end"
-            android:text="value"
-            android:textAlignment="textEnd"></TextView>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="color:"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="end"
+                android:text="@{model.selectedTShirt.color}"
+                android:textAlignment="textEnd"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="size:"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="end"
+                android:text="@{model.selectedTShirt.size.toString()}"
+                android:textAlignment="textEnd"></TextView>
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="size:"></TextView>
-
-        <TextView
-            android:id="@+id/size_value"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="end"
-            android:text="value"
-            android:textAlignment="textEnd"></TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="color by Databinding:"></TextView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="end"
-            android:text="@{model.selectedTShirt.color}"
-            android:textAlignment="textEnd"></TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="size by Databinding:"></TextView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="end"
-            android:text="@{model.selectedTShirt.size.toString()}"
-            android:textAlignment="textEnd"></TextView>
-    </LinearLayout>
-</LinearLayout>
 
 </layout>

@@ -8,12 +8,28 @@
     android:orientation="vertical"
     >
 
-    <Button
+    <TextView
+        android:id="@+id/button_detail_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Detail Fragment with Binding"
+        android:textAlignment="center" />
+
+    <fragment
+        android:id="@+id/detailed_view_binding"
+        android:name="com.example.livedatapresentation.tshirt.screens.detail.DetailFragmentWithDataBinding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_fragments"
+        android:layout_weight="0.33" />
+
+    <TextView
         android:id="@+id/button_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="DetailFragment"
+        android:text="Detail Fragment"
         android:textAlignment="center" />
 
     <fragment
@@ -22,9 +38,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_fragments"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.33" />
 
-    <Button
+    <TextView
         android:id="@+id/button_overview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_fragments"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.33" />
 
     <Button
         android:id="@+id/button_add_random"

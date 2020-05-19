@@ -1,6 +1,8 @@
 package com.example.livedatapresentation.tshirt.screens
 
 import android.app.Application
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.lifecycle.*
 import com.example.livedatapresentation.tshirt.TShirt
 import com.example.livedatapresentation.tshirt.repository.TshirtRepository
@@ -21,6 +23,10 @@ class TShirtSelectorViewModel(application: Application) : AndroidViewModel(appli
         } else {
             allTshirtsValue.get(it)
         }
+    }
+
+    val tshirtColor = Transformations.map(selectedTShirt){
+        ColorStateList.valueOf(Color.parseColor(it.color))
     }
 
     override fun onCleared() {
