@@ -27,7 +27,10 @@ class DetailFragmentWithDataBinding : LoggedFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil
-            .inflate<FragmentDetailWithBindingBinding>(inflater, R.layout.fragment_detail_with_binding, container, false)
+            .inflate<FragmentDetailWithBindingBinding>(inflater,
+                R.layout.fragment_detail_with_binding,
+                container,
+                false)
         binding.model = viewModel
         binding.lifecycleOwner = this
         return binding.root
