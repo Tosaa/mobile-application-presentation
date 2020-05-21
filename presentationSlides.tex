@@ -127,17 +127,18 @@
 			val nameObserver = Observer<String> { newName ->
         	nameTextView.text = newName
     		}
-			currentName.observe(lifeCycleOwner, nameObserver)
+			publicLiveData.observe(lifeCycleOwner, nameObserver)
 		\end{spverbatim}
 	\end{block}
 	\begin{block}{Observing LiveData with Lambda}
 		\begin{spverbatim}
 			// not observed
-			val name = repository.currentName
+			val name = repository.publicLiveData
 			// make line above observing indirectly
-			val nameLetters = name.observe(lifeCycleOwner,Observer{
-			it.toCharArray().asList()
-			}
+			val nameLetters = name.observe(
+			lifeCycleOwner,
+			Observer{it.toCharArray().asList()}
+			)
 		\end{spverbatim}
 	\end{block}
 	\end{frame}
