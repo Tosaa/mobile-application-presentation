@@ -30,9 +30,41 @@ The only exception is the "Observe forever" method, which can be used without a 
 [read more about LifeCycles](https://developer.android.com/topic/libraries/architecture/lifecycle)
 
 ### Code examples
-
-
-
+#### Create MutableLiveData
+> val liveData = MutableLiveData<String>().apply{ value = "Hello World" }
+#### create not mutbale LiveData 
+  
+>@Query("SELECT * FROM PERSON ORDER BY NAME")  
+>LiveData<List<Person>> loadAllPersons();
+  
+#### combine Mutable and immutable LiveData
+>//dont let anyone see the MutableLifeData   
+private val privateLiveData = MutableLiveData<String>().apply{
+			value = "Hello World"
+			}  
+  //show not mutable LiveData only  
+			val publicLiveData : LiveData<String> = privateLiveData	  
+  //to edit the LiveData's value, use the visible method  
+			fun changeString(string : String){
+			privateLiveData.postValue(string)
+			}
+#### observe LiveData
+> //create an observer:  
+  val nameObserver = Observer<String> { newName ->  
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  //assign your observed value, to a view element  
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  nameTextView.text = newName  
+    		}  
+			currentName.observe(lifeCycleOwner, nameObserver)  
+##### observing LiveData indirectly
+> // not observed  
+			val name = repository.currentName  
+			// make line above observing indirectly  
+			val nameLetters = name.observe(lifeCycleOwner,Observer{  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+			it.toCharArray().asList()  
+			}  t
 ## T-Shirt App
 * slides
 * screenshots
