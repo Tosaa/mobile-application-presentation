@@ -87,12 +87,19 @@ Under the third Fragment is a "Add Random T-Shirt" Button. When it is clicked, a
 
 ### Architectur:
 Here are screenshots, how LiveData fits into the architecture of the app:  
-<img src="TShirtAppOverview.png" alt="drawing" width="800"/>  
+<img src="TshirtArchitectureOverview.png" alt="drawing" width="800"/>  
 <img src="TShirtAppDetailView.png" alt="drawing" width="800"/>  
 
 ## Summary
-* give some hints
-* share repo
-* share handout
-#### Technical background:
-* I have worked already with LD in my internship. The very first thing you have to do is to create Views, and fill them with data. (because it is the easies what you can do) Later on, tasks improve, but with this task you will improve you stream based thinking a lot and see some edge cases which come up.
+* check LifeCycle  
+no observation when LifeCycle is Paused
+* pass lifecycle to binding
+* check if LiveData is observed  
+not observed LiveData does not change  
+check also the methods of LiveData  
+hasActiveObservers() & hasObservers()
+* check value is in proper Type in xml  
+android:text = "@\{viewmodel.number\}"  
+android:text = "@\{viewmodel.number.toString()\}"  
+(android:text expects a String)  
+* check Livedata is not Mutable acidently
