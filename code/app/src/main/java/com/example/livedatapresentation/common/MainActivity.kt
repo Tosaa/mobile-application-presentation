@@ -20,35 +20,31 @@ class MainActivity : AppCompatActivity() {
         if (Timber.treeCount() == 0) {
             Timber.plant(DebugTree())
         }
-        Timber.d("onCreate: ${this::class.java.simpleName}")
         val model = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory(application)
         ).get(TShirtSelectorViewModel::class.java)
         setContentView(R.layout.activity_main)
-        TshirtRepository.instance.allTshirts.observe(
-            this,
-            Observer { Timber.d("MainActivity observes Repo: $it") })
     }
 
 
     override fun onPause() {
         super.onPause()
-        Timber.d("onPause: ${this::class.java.simpleName}")
+        //Timber.d("onPause: ${this::class.java.simpleName}")
     }
 
     override fun onResume() {
         super.onResume()
-        Timber.d("onResume: ${this::class.java.simpleName}")
+        //Timber.d("onResume: ${this::class.java.simpleName}")
     }
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        Timber.d("onResumeFragments: ${this::class.java.simpleName}")
+        //Timber.d("onResumeFragments: ${this::class.java.simpleName}")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Timber.d("onDestroy: ${this::class.java.simpleName}")
+        //Timber.d("onDestroy: ${this::class.java.simpleName}")
     }
 }

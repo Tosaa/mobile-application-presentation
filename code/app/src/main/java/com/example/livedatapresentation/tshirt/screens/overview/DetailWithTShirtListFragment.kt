@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.livedatapresentation.common.LoggedFragment
 import com.example.livedatapresentation.R
 import com.example.livedatapresentation.tshirt.TShirt
 import com.example.livedatapresentation.tshirt.repository.TshirtRepository
 import kotlinx.android.synthetic.main.fragment_tshirt_overview.view.*
 import timber.log.Timber
 
-class DetailWithTShirtListFragment : LoggedFragment() {
+class DetailWithTShirtListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

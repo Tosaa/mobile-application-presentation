@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.livedatapresentation.R
-import com.example.livedatapresentation.common.LoggedFragment
 import com.example.livedatapresentation.databinding.FragmentDetailWithBindingBinding
 import com.example.livedatapresentation.tshirt.screens.TShirtSelectorViewModel
 
-class DetailFragmentWithDataBinding : LoggedFragment() {
+class DetailFragmentWithDataBinding : Fragment() {
     private lateinit var viewModel: TShirtSelectorViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
