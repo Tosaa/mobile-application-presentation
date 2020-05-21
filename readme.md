@@ -64,10 +64,32 @@ private val privateLiveData = MutableLiveData<String>().apply{
 			val nameLetters = name.observe(lifeCycleOwner,Observer{  
       &nbsp;&nbsp;&nbsp;&nbsp;
 			it.toCharArray().asList()  
-			}  t
+			}  
+	
+#### Observe LiveData with Databinding
+It is also very common to observe data from the view. Therefore i'd like to refer to an article about " 
+[Use LiveData to notify the UI about data changes](https://developer.android.com/topic/libraries/data-binding/architecture#livedata) "
+
 ## T-Shirt App
-* slides
-* screenshots
+### Idea
+To share the Idea of using LiveData, I created a simple T-Shirt App.  
+The App is not realy practical, but the code I used, should show how LiveData can be used.  
+To get the basic idea of the App, here are some Screenshots:  
+<img src="screenshot_basic.png" alt="drawing" width="200"/>
+<img src="multiple_shirts_blue.png" alt="drawing" width="200"/>  
+There are 3 Fragments. The First and the second, show the exact same content and behave identical. The only difference between them is the implementation of it. The first, observes the values in the Viewmodel with databinding. The code is written in the xml file of the View. For the second implementation, the code is written in the fragment file itself.  
+The first approach is the most common approach.  
+
+The third Fragment, is an overview of T-Shirts in the repository. The details fragment below can be changed by clicking on a t-shirt in the third Fragment. The t-shirts color, the color value and the size will change immediately.  
+A LiveData value in the ViewModel will be updated, by clicking on a t-shirt. By updating the value, the observer in the view gets notified and updates its values on its own.
+
+Under the third Fragment is a "Add Random T-Shirt" Button. When it is clicked, a t-shirt with random Hex-Color and Size will be added to the repository. The change in the Repository also will notify all observers and indirect observers and they will change. 
+
+### Architectur:
+Here are screenshots, how LiveData fits into the architecture of the app:  
+<img src="TShirtAppOverview.png" alt="drawing" width="800"/>  
+<img src="TShirtAppDetailView.png" alt="drawing" width="800"/>  
+
 ## Summary
 * give some hints
 * share repo
